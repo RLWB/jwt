@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 const key = "shhhhh";
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("uploads"));
 app.get("/index", (req, res) => {
